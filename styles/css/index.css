@@ -1,0 +1,62 @@
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #778899;
+  font-family: 'Share Tech Mono', monospace;
+  color: #fff;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  text-transform: lowercase;
+}
+.main-content {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.09);
+  left: 25px;
+  right: 25px;
+  top: 25px;
+  bottom: 25px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  border-radius: 10px;
+  display: grid;
+  grid-template-areas: 'p p c c c c';
+}
+#profile {
+  grid-area: 'p';
+  text-align: center;
+  padding-top: 15px;
+}
+#profile .contact-item {
+  padding: 0px 10px 0px 10px;
+}
+#profile .contact-item a {
+  text-decoration: none;
+  color: white;
+}
+#profile .contact-item a :hover {
+  color: rgba(0, 0, 0, 0.15);
+}
+#profile h2 {
+  font-weight: lighter;
+  font-size: 1.6em;
+}
+#profile .profile-text {
+  font-size: 1.4em;
+}
+#profile #profile-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+}
+#about {
+  padding-left: 10px;
+}
+#about .about-main {
+  font-size: 1.7em;
+  padding-top: 10px;
+}
+.black-bold {
+  color: black;
+  font-weight: 600;
+}
