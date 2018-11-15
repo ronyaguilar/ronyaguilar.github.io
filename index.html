@@ -2,10 +2,12 @@
 <html>
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="styles/css/index.css"/>
+
+    <link rel="stylesheet" href="./styles/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./styles/css/index.css"/>
+
 
   	<title>Rony Aguilar</title>
   </head>
@@ -13,7 +15,7 @@
   <body>
   		<div class='main-content'>
         <!-- PROFILE CONTENT -->
-        <div id='profile'>
+        <div id='profile' style="position: sticky;">
           <img id='profile-img' src="https://media.giphy.com/media/3o7TKwBiaPbVVcdIuk/giphy.gif" alt="kobe waving at camera"/>
           <h1> rony aguilar </h1>
           <h2> software engineer | los angeles</h2>
@@ -25,15 +27,38 @@
         </div>
         <!-- ************************* -->
         <!-- ABOUT SECTION -->
-        <div id='about'>
-          <a class='about-main' role='button' aria-expanded="true" aria-controls="about-intro" data-toggle="collapse" href="#about-intro">who am i ?</a>
-          <div id='about-intro' class='collapse show'>
-            <p>Recent graduate from <span class='black-bold'>Loyola Marymount University</span> where I studied <span class='black-bold'>Computer Science</span>. I am a passionate software engineer who has explored various areas such as <span class='black-bold'>Game Development, Machine Learning, and Web Development</span>. My experience with Full-Stack Development allows me to be flexible with both Front-End and Back-End roles. When I am <span class='black-bold'>not coding</span>, I will most likely be <span class='black-bold'>playing video games</span> on my playstation or watching a <span class='black-bold'>laker game</span>. </p>
+        <div id='sub-content'>
+          <div class='content-item' id='about'>
+            <a class='toggable-title active' href='javascript:;'>who am i?</a>
+            <div class='collapse-wrapper' style="display:block; margin-left:0px;">
+              <p>Recent graduate from <span class='black-bold'>Loyola Marymount University</span> where I studied <span class='black-bold'>Computer Science</span>. I am a passionate software engineer who has explored various areas such as <span class='black-bold'>Game Development, Machine Learning, and Web Development</span>. My experience with Full-Stack Development allows me to be flexible with both Front-End and Back-End roles. When I am <span class='black-bold'>not coding</span>, I will most likely be <span class='black-bold'>playing video games</span> on my playstation or watching a <span class='black-bold'>laker game</span>. </p>
+            </div>
+          </div>
+          <div class='content-item' id='tech'>
+            <a class='toggable-title' href='javascript:;'>which technologies do i enjoy working with?</a>
+            <div class='collapse-wrapper'>
+              <p>with the rapid evolution of libraries and frameworks this answer tends to change. over the past year i have took it upon myself to explore past the tip of the iceberg.
+              <ul>
+                <li>as of late, i have picked up <span class='black-bold'>react and redux</span> as dispatching actions to change the state of components really reinforces <span class='black-bold'>a layer between data and ui</span> that i am fond of</li>
+              </ul></p>
+            </div>
+          </div>
+          <div class='content-item' id='projects'>
+            <a class='toggable-title' href='javascript:;'>what are some of my projects?</a>
+            <div class='collapse-wrapper'>
+              <p></p>
+            </div>
+          </div>
+          <div class='content-item' id='education'>
+            <a class='toggable-title' href='javascript:;'>what is my academic background?</a>
+            <div class='collapse-wrapper'>
+              <p></p>
+            </div>
           </div>
         </div>
       </div>
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/index.js"></script>
   </body>
 </html>
