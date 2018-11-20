@@ -102,6 +102,12 @@ body {
   z-index: 100;
   position: fixed;
 }
+.sticky {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+}
 #about {
   display: block;
   text-align: center;

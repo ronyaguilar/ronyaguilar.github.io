@@ -1,11 +1,9 @@
 $(document).ready(() => {
   let windowSize = $(window).height();
   
-  let isIE = navigator.userAgent.search("MSIE") & gt; = 0
-
+  let isIE = navigator.userAgent.search("MSIE") > 0;
   // Edge 20+
   let isEdge = !isIE && !!window.StyleMedia;
-  
   
   let resizeSection = () => {
      // Set height for welcome section
@@ -43,15 +41,12 @@ $(document).ready(() => {
     let $nav = $('#nav');
     let top = $('#main-wrapper').offset().top;
     if(top >= offset){
-      console.log('nav now at top');
       $nav.addClass('fixed');
       $nav.width(container_width);
     }
     if(top < offset) {
-      console.log('nav not at top');
       $nav.removeClass('fixed');
     }
-    console.log('top: ' + top + ' offset: ' + offset);
   });
   }
 });
