@@ -22,7 +22,7 @@ body {
   margin: auto;
   border-radius: 10px;
   display: grid;
-  grid-template-areas: 'intro' 'about about' 'skills skills' 'projects projects' 'work work' 'education education' 'contact contact';
+  grid-template-areas: 'intro' 'about about' 'projects projects' 'work work' 'education education' 'contact contact';
 }
 #intro-container {
   display: flex;
@@ -109,17 +109,45 @@ body {
   top: 0;
 }
 #about {
+  margin-top: 100px;
+}
+#about .section-title {
   display: block;
   text-align: center;
-  margin-top: 100px;
-  transition: 0.8s;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -ms-transition: 0.8s;
-  -o-transition: 0.8s;
+}
+#about .about-container {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'polaroid skills' 'about skills';
+  justify-items: center;
+}
+#about .about-container .polaroid {
+  grid-area: polaroid;
+  text-align: center;
+  height: 390px;
+  width: 320px;
+  background-image: url('../../images/pic-texture.jpg');
+  box-shadow: -1px 1px 3px 1px #666;
+  transform: rotate(-4deg);
+}
+#about .about-container .polaroid img {
+  margin: 10px 0px 0px 0px;
+}
+#about .about-container .about-intro {
+  grid-area: about;
+  margin-left: 20px;
+}
+#about .about-container .skills {
+  grid-area: skills;
+  color: black;
+}
+#about .about-container .skills .card {
+  width: 500px;
+  margin-bottom: 25px;
 }
 .black-bold {
-  color: black;
+  color: #333333;
   font-weight: 600;
 }
 .title-divider {

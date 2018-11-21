@@ -38,7 +38,6 @@ body {
   display: grid;
   grid-template-areas: 'intro'
                        'about about'
-                       'skills skills'
                        'projects projects'
                        'work work'
                        'education education'
@@ -144,19 +143,48 @@ body {
 }
 
 #about{
-  display: block;
-  text-align: center;
   margin-top: 100px;
-  transition: @arrow_transition;
-  -webkit-transition: @arrow_transition;
-  -moz-transition: @arrow_transition;
-  -ms-transition: @arrow_transition;
-  -o-transition: @arrow_transition;
-  
+  .section-title{
+    display: block;
+    text-align: center;
+  }
+  .about-container{
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'polaroid skills'
+                           'about skills';
+      justify-items: center;
+      .polaroid{
+        grid-area: polaroid;
+        text-align: center;
+        height: 390px;
+        width: 320px;
+        background-image: url('../../images/pic-texture.jpg');
+        box-shadow: -1px 1px 3px 1px #666;
+        transform: rotate(-4deg);
+        img{
+             margin: 10px 0px 0px 0px;
+        }
+      }
+      .about-intro{
+          grid-area: about;
+          margin-left: 20px;
+      }
+      .skills{
+          grid-area: skills;
+          color: black;
+          .card {
+              width: 500px;
+              margin-bottom: 25px;
+          }
+      }
+  }
+    
 }
 
 .black-bold {
-  color: black;
+  color: #333333;
   font-weight: 600;
 }
 
