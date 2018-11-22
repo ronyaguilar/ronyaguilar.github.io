@@ -49,4 +49,32 @@ $(document).ready(() => {
     }
   });
   }
+  
+  $('a').bind('click', function(e) {
+      e.preventDefault(); // prevent hard jump, the default behavior
+
+      var target = $(this).attr("href"); // Set the target as variable
+      var scrollDistance = $(target).position().top;
+      console.log('initial top: ' + scrollDistance);
+      // perform animated scrolling by getting top-position of target-element and set it as scroll target
+      $('#main-wrapper').stop().animate({
+          scrollTop: scrollDistance
+      }, 600, function() {
+          location.hash = target; //attach the hash (#jumptarget) to the pageurl
+          console.log('end top: ' + $(target).position().top);
+      });
+      
+      return false;
+  });
+
+ /* $('#main-wrapper').scroll(function() {
+          var scrollDistance = $('#main-wrapper').scrollTop();
+          // Assign active class to nav links while scolling
+          $('.page-section').each(function(i) {
+              if ($(this).position().top <= scrollDistance) {
+                $('.active').removeClass('active');
+                $('a').eq(i).addClass('active');
+              }
+          });
+  }).scroll();*/
 });

@@ -81,8 +81,10 @@ body {
   display: flex;
   align-items: center;
   height: 50px;
-  background-color: #ff5a5a;
+  background-color: #ff7d88;
   border-radius: 10px 10px 0px 0px;
+  letter-spacing: 1.5px;
+  z-index: 100;
   font-size: 1.5rem;
   font-family: 'Bangers';
   border-bottom: 2px solid white;
@@ -109,16 +111,17 @@ body {
   top: 0;
 }
 #about {
-  margin-top: 100px;
+  margin-top: 85px;
 }
 #about .section-title {
   display: block;
   text-align: center;
 }
 #about .about-container {
-  margin-top: 60px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 425px 1fr;
   grid-template-areas: 'polaroid skills' 'about skills';
   justify-items: center;
 }
@@ -137,18 +140,34 @@ body {
 #about .about-container .about-intro {
   grid-area: about;
   margin-left: 20px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1.3px;
+  color: black;
 }
 #about .about-container .skills {
   grid-area: skills;
   color: black;
 }
 #about .about-container .skills .card {
-  width: 500px;
+  width: 550px;
+  height: 170px;
   margin-bottom: 25px;
 }
-.black-bold {
-  color: #333333;
-  font-weight: 600;
+#about .about-container .skills .card .card-body {
+  background-color: #ddd;
+}
+#about .about-container .skills .icon-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#about .about-container .skills .icon-group img {
+  height: 80px;
+  width: 80px;
+}
+.white-bold {
+  color: #eee;
+  font-weight: 500;
 }
 .title-divider {
   display: inline-block;

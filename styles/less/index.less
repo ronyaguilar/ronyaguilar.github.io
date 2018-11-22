@@ -2,9 +2,11 @@
 @blue: #63ACE5; 
 @lighter-blue: rgba(173, 220, 229, 0.3);
 @orange-red: #ff5a5a;
+@pink-red: #ff7d88;
 
 @header-font: 'Fugaz One', cursive;
 @content-font: 'Shrikhand', cursive;
+@text-font: 'Raleway', sans-serif;
 @nav-font: 'Bangers';
 @main-font-color: #fff;
 @main-content-margin: 25px;
@@ -37,11 +39,10 @@ body {
   border-radius: 10px;
   display: grid;
   grid-template-areas: 'intro'
-                       'about about'
-                       'projects projects'
-                       'work work'
-                       'education education'
-                       'contact contact';
+                       'about'
+                       'work'
+                       'education'
+                       'contact';
 }
 @media screen and (max-width: 1900px) {
   .main-content{
@@ -51,7 +52,7 @@ body {
 
 #intro-container{
     display: flex;
-    grid-area: 'intro';
+    grid-area: intro;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -110,8 +111,10 @@ body {
   display: flex;
   align-items: center;
   height: 50px;
-  background-color: @orange-red;
+  background-color: @pink-red;
   border-radius: 10px 10px 0px 0px;
+  letter-spacing: 1.5px;
+  z-index: 100;
   
   font-size: 1.5rem;
   font-family: @nav-font;
@@ -143,15 +146,17 @@ body {
 }
 
 #about{
-  margin-top: 100px;
+  grid-area: about;
+  margin-top: 85px;
   .section-title{
     display: block;
     text-align: center;
   }
   .about-container{
-      margin-top: 60px;
+      margin-top: 50px;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 425px 1fr;
       grid-template-areas: 'polaroid skills'
                            'about skills';
       justify-items: center;
@@ -170,22 +175,37 @@ body {
       .about-intro{
           grid-area: about;
           margin-left: 20px;
+          font-family: @text-font;
+          letter-spacing: 1.3px;
+          color: black;
       }
       .skills{
           grid-area: skills;
           color: black;
           .card {
-              width: 500px;
+              width: 550px;
+              height: 170px;
               margin-bottom: 25px;
+            .card-body{
+              background-color: #ddd;            }
           }
+        .icon-group{
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-start;
+          img{
+            height: 80px;
+            width: 80px;
+          }
+        }
       }
   }
     
 }
 
-.black-bold {
-  color: #333333;
-  font-weight: 600;
+.white-bold {
+  color: #eee;
+  font-weight: 500;
 }
 
 .title-divider{
