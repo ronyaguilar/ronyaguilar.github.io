@@ -21,12 +21,19 @@ body {
   max-width: 100%;
   margin: auto;
   border-radius: 10px;
+  /*
   display: grid;
-  grid-template-areas: 'intro' 'about about' 'projects projects' 'work work' 'education education' 'contact contact';
+  grid-template-areas: 'intro'
+                       'about'
+                       'work'
+                       'education'
+                       'contact';*/
+}
+.page-section {
+  position: relative;
 }
 #intro-container {
   display: flex;
-  grid-area: 'intro';
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -95,6 +102,7 @@ body {
 #nav a {
   margin-left: 50px;
   cursor: pointer;
+  color: #fff;
 }
 #nav a:hover {
   color: #444;
@@ -110,13 +118,6 @@ body {
   position: sticky;
   top: 0;
 }
-#about {
-  margin-top: 85px;
-}
-#about .section-title {
-  display: block;
-  text-align: center;
-}
 #about .about-container {
   margin-top: 50px;
   display: grid;
@@ -124,6 +125,7 @@ body {
   grid-template-rows: 425px 1fr;
   grid-template-areas: 'polaroid skills' 'about skills';
   justify-items: center;
+  background: linear-gradient(rgba(173, 220, 229, 0) 0%, 85%, rgba(255, 255, 255, 0.32) 95%, rgba(173, 220, 229, 0) 100%);
 }
 #about .about-container .polaroid {
   grid-area: polaroid;
@@ -139,7 +141,7 @@ body {
 }
 #about .about-container .about-intro {
   grid-area: about;
-  margin-left: 20px;
+  margin-left: 30px;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 1.3px;
   color: black;
@@ -147,6 +149,7 @@ body {
 #about .about-container .skills {
   grid-area: skills;
   color: black;
+  margin-bottom: 100px;
 }
 #about .about-container .skills .card {
   width: 550px;
@@ -164,6 +167,60 @@ body {
 #about .about-container .skills .icon-group img {
   height: 80px;
   width: 80px;
+}
+#work #project-list {
+  margin: 30px;
+  padding-bottom: 200px;
+  background: linear-gradient(rgba(173, 220, 229, 0) 0%, 90%, rgba(255, 255, 255, 0.32) 95%, rgba(173, 220, 229, 0) 100%);
+}
+#work #project-list .project-container {
+  display: grid;
+  margin-top: 50px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  justify-items: center;
+}
+#work #project-list .project-container .card-header {
+  font-family: 'Fugaz One', cursive;
+  font-size: 24px;
+}
+#work #project-list .project-container .card-footer {
+  font-family: 'Fugaz One', cursive;
+}
+#education #education-container {
+  background: linear-gradient(rgba(173, 220, 229, 0) 0%, 85%, rgba(255, 255, 255, 0.32) 95%, rgba(173, 220, 229, 0) 100%);
+  padding-bottom: 100px;
+}
+#education #education-container .school-container {
+  margin-top: 50px;
+  text-align: center;
+}
+#education #education-container .school-container h1 {
+  margin-top: 5px;
+  font-size: 1.8em;
+}
+#education #education-container .school-container h2 {
+  font-size: 1.3em;
+}
+#education #education-container .school-container ul,
+#education #education-container .school-container p {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  margin-bottom: 8px;
+}
+#education #education-container .school-container ul li,
+#education #education-container .school-container p li {
+  padding-right: 20px;
+}
+.section-title {
+  display: block;
+  text-align: center;
+  margin-top: 85px;
 }
 .white-bold {
   color: #eee;
