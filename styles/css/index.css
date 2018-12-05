@@ -190,8 +190,8 @@ body {
   font-family: 'Fugaz One', cursive;
 }
 #education #education-container {
-  background: linear-gradient(rgba(173, 220, 229, 0) 0%, 85%, rgba(255, 255, 255, 0.32) 95%, rgba(173, 220, 229, 0) 100%);
-  padding-bottom: 100px;
+  background: linear-gradient(rgba(173, 220, 229, 0) 0%, 85%, rgba(255, 255, 255, 0.5) 92%, #ff7d88 100%);
+  padding-bottom: 110px;
 }
 #education #education-container .school-container {
   margin-top: 50px;
@@ -216,6 +216,53 @@ body {
 #education #education-container .school-container ul li,
 #education #education-container .school-container p li {
   padding-right: 20px;
+}
+#contact {
+  background-color: #ff7d88;
+}
+#contact .section-title {
+  display: block;
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 25px;
+}
+#contact #contact-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+#contact #contact-container .email-button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  margin-top: 50px;
+  width: 370px;
+  height: 75px;
+}
+#contact #contact-container .email-button #send-mail {
+  font-size: 1.4em;
+}
+#contact #contact-container .email-button #send-mail span {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 75px;
+  width: 100px;
+}
+#contact #contact-container .contact-list {
+  height: 75px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#contact #contact-container .contact-list a {
+  font-size: 1.25em;
+  padding-left: 25px;
 }
 .section-title {
   display: block;
