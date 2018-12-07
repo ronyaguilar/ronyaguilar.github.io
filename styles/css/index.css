@@ -13,6 +13,7 @@ body {
 .main-content {
   position: absolute;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: rgba(173, 220, 229, 0.3);
   left: 25px;
   right: 25px;
