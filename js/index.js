@@ -57,20 +57,23 @@ $(document).ready(() => {
   });
 
   $('#main-wrapper').scroll(function() {
-    let viewportTop = $('#main-wrapper').scrollTop();
+    let viewHeight = $('#main-wrapper').outerHeight();
     let nav = $('#nav');
-    let nav_height = nav.outerHeight();
-          // Assign active class to nav links while scolling
+    
+    // Assign active class to nav links while scolling
     $('.page-section').each(function() {
-      let sectionTop = $(this).offset().top - $('#main-wrapper').offset().top;
+      let sectionTop = $(this).offset().top;
+      let sectionHeight = $(this).outerHeight();
+      let id = $(this).attr('id');
       
-      let sectionBottom = sectionTop + $(this).outerHeight();
-      console.log($(this).attr('id') + ': ' + sectionBottom);
-      if (0 <= sectionTop) {
-        nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
-      }
-      if(sectionTop < 0){
+      
+      if (sectionTop <= (0.35 * viewHeight) && sectionTop >= 0) {
         nav.find('a').removeClass('active');
+        $(`a[href='#${id}']`).addClass('active');
+      }
+      if(sectionHeight + sectionTop >= (0.75 * viewHeight) && sectionTop <= 0){
+        nav.find('a').removeClass('active');
+        $(`a[href='#${id}']`).addClass('active');
       }
     });
   });

@@ -84,6 +84,9 @@ body {
   transform: rotate(90deg);
   color: #444;
 }
+.active {
+  color: #444;
+}
 #nav {
   display: flex;
   align-items: center;
