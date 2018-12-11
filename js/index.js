@@ -80,10 +80,5 @@ $(document).ready(() => {
     });
   });
 
-  /*$('#send-mail').bind('click', function(){
-    console.log('submit clicked');
-    $('#email-form').submit();
-  });*/
-
 
 });
