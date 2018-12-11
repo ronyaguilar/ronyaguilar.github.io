@@ -247,7 +247,97 @@
         <div class='title-divider'></div>
       </div>
       <div id='contact-container'>
-        <div class='email-button'><a id='send-mail'><span class="fas fa-paper-plane"></span>Let's connect</a></div>
+
+        <form id='email-form' method="post">
+          <div id='form-name'>
+            <label>Name: </label>
+            <input name='name' placeholder="Your name">
+          </div>
+          <div id='form-email'>
+            <label>Email: </label>
+            <input name='email' placeholder="Your email">
+          </div>
+          <div id='form-message'>
+            <label> Message: </label>
+            <textarea name='message' placeholder='Your message'></textarea>
+          </div>
+          <input type="submit" name='submit' value='submit'>
+        </form>
+        <?php
+          if($_POST['submit']) {
+
+              $email_to = "rony.aguilar.dev@gmail.com";
+              $email_subject = "Email from website";
+
+              function died($error) {
+                  // your error code can go here
+                  echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+                  echo "These errors appear below.\n\n";
+                  echo $error."\n\n";
+                  echo "Please go back and fix these errors.\n\n";
+                  die();
+              }
+
+
+              // validation expected data exists
+              if(!isset($_POST['name']) ||
+                  !isset($_POST['email']) ||
+                  !isset($_POST['message'])) {
+                  died('We are sorry, but there appears to be a problem with the form you submitted.');
+              }
+
+
+
+              $name = $_POST['name']; // required
+              $email_from = $_POST['email']; // required
+              $message = $_POST['message']; // required
+
+              $error_message = "";
+              $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+            if(!preg_match($email_exp,$email_from)) {
+              $error_message .= 'The Email Address you entered does not appear to be valid.\n';
+            }
+
+              $string_exp = "/^[A-Za-z .'-]+$/";
+
+            if(!preg_match($string_exp,$name)) {
+              $error_message .= 'The Name you entered does not appear to be valid.\n;
+            }
+
+            if(strlen($message) < 2) {
+              $error_message .= 'The Message you entered do not appear to be valid.\n';
+            }
+
+            if(strlen($error_message) != 0) {
+              died($error_message);
+            }
+
+              $email_message = "Form details below.\n\n";
+
+
+              function clean_string($string) {
+                $bad = array("content-type","bcc:","to:","cc:","href");
+                return str_replace($bad,"",$string);
+              }
+
+
+
+              $email_message .= "Name: ".clean_string($name)."\n";
+              $email_message .= "Email: ".clean_string($email_from)."\n";
+              $email_message .= "Message: ".clean_string($message)."\n";
+
+              $headers = array("From: {$email_from}",
+              "Reply-To: rony.aguilar.dev@gmail.com",
+              "X-Mailer: PHP/" . PHP_VERSION);
+
+              if(mail($email_to, $email_subject, $email_message, $headers)){
+                echo "message sent";
+              }
+          }
+        ?>
+
+        <div class='email-button'><a id='send-mail' name='submit'><span class="fas fa-paper-plane"></span>Let's connect</a></div>
         <div class='contact-list'>
           <a id='github-icon'><span class='fab fa-github-alt fa-lg'></span> ronyaguilar</a>
           <a id='linkedin-icon'><span class='fab fa-linkedin fa-lg'></span> ronyaguilar</a>
