@@ -3,8 +3,9 @@
 @blue: #63ACE5;
 @off-white: rgba(214, 214, 214, 0.5);
 @light-blue: rgba(173, 220, 229, 0.3);
-@dark-blue: rgba(100, 100, 100, 0.5);
-//@orange-red: #ff5a5a;
+@dark-blue: rgba(100, 100, 100, 0.3);
+@secondary: rgba(135, 255, 208, 0.65);
+@orange-red: #ff5a5a;
 @pink-red: #ff7d88;
 
 @header-font: 'Fugaz One', cursive;
@@ -177,7 +178,7 @@ body {
       .skills{
           grid-area: skills;
           color: black;
-          margin-bottom: 100px;
+          padding-bottom: 200px;
           .card {
               width: 550px;
               height: 170px;
@@ -201,27 +202,47 @@ body {
 #work {
   #project-list{
     margin: @content-margins;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
     background: linear-gradient(rgba(173,220,229,0.0) 0%, 90%, rgba(255,255,255,0.32) 95%, rgba(173,220,229,0.0) 100% );
     .project-container{
       display: grid;
-      margin-top: 50px;
+      margin-top: 100px;
       grid-template-rows: 1fr;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       color: black;
       font-family: @text-font;
       justify-items: center;
       .card{
-        height: 500px;
+        //height: 500px;
+        img{
+          width: 500px;
+          height: 350px;
+        }
+        width: 75%;
         .card-header{
           font-family: @header-font;
           font-size: 24px;
         }
         .card-body{
+          display: grid;
+          grid-template-columns: auto 1fr;
+          grid-template-rows: auto;
           background-color: #eee;
+          ul{
+            grid-column-start: 2;
+          }
         }
         .card-footer{
           font-family: @header-font;
+          display: flex;
+          .tag{
+            height: 20px;
+            border-radius: 10px;
+            background-color: #222;
+            color: white;
+            padding: 0px 10px 0px 10px;
+            margin-right: 10px;
+          }
         }
       }
 
@@ -231,8 +252,8 @@ body {
 
 #education {
   #education-container{
-    background: linear-gradient(rgba(173,220,229,0.0) 0%, 85%, rgba(255,255,255,0.5) 92%, rgba(255,125,136,1.0) 100% );
-    padding-bottom: 110px;
+    background: linear-gradient(rgba(173,220,229,0.0) 0%, 85%, rgba(255,255,255,0.5) 92%, @pink-red 100% );
+    padding-bottom: 175px;
     .school-container{
       margin-top: 50px;
       text-align: center;
@@ -280,6 +301,8 @@ body {
       position: relative;
       align-items: center;
       justify-content: center;
+      text-align: center;
+
       border: 4px solid white;
       margin-top: 75px;
       margin-bottom: 50px;
@@ -287,15 +310,25 @@ body {
       height: 75px;
 
       #send-mail{
+        position: absolute;
+        height: 100%;
+        width: 100%;
         font-size: 1.4em;
+        top: 25%;
+        left: 0%;
+        text-decoration: none;
+        color: white;
         span{
-          text-align: center;
-          position: absolute;
-          left: 0;
-          top: 0;
-          line-height: 75px;
-          width: 100px;
+          margin-right: 10px;
         }
+        /*a{
+          text-align: center;
+          //position: absolute;
+          //left: 0;
+          //top: 0;
+          line-height: 100%;
+          //width: 100px;
+        }*/
       }
     }
     .email-button:hover {
@@ -306,7 +339,14 @@ body {
       -ms-transition: @anim_duration;
       -o-transition: @anim_duration;
       border-color: #444;
-      color: #444;
+      #send-mail{
+        transition: @anim_duration;
+        -webkit-transition: @anim_duration;
+        -moz-transition: @anim_duration;
+        -ms-transition: @anim_duration;
+        -o-transition: @anim_duration;
+        color: #444;
+      }
     }
     .contact-list{
       height: 75px;
@@ -351,31 +391,6 @@ body {
   height: 5px;
   background-color: white;
 
-}
-
-#email-form{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-
-  #form-name{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  #form-email{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  #form-message{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
 }
 
 // Mobile LESS
@@ -457,19 +472,35 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto auto;
         .card{
+          width: 90%;
           margin-top: 50px;
-          height: 750px;
           .card-header{
             text-align: center;
             font-size: 48px;
             height: 100px;
           }
           .card-body{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto 1fr;
             font-size: 26px;
+            img{
+              grid-row-start: 1;
+              width: 90%;
+              justify-self: center;
+              margin-bottom: 40px;
+            }
+            ul{
+              grid-row-start: 2;
+              grid-column-start: 1;
+            }
           }
           .card-footer{
             height: 75px;
             font-size: 28px;
+            .tag{
+              height: 40px;
+            }
           }
         }
       }
