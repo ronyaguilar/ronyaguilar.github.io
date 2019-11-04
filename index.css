@@ -134,6 +134,7 @@ body {
   margin: 10px 0px 0px 0px;
   width: 300px;
   height: 310px;
+  transform: rotate(90deg);
 }
 #about .about-container .about-intro {
   grid-area: about;
@@ -351,44 +352,19 @@ body {
   background-color: white;
 }
 @media only screen and (max-width: 1200px) {
-  /*
-  #intro-container{
-    #intro-contents{
-      h1{
-        font-size: 84px;
-      }
-      h2{
-        font-size: 54px;
-      }
-      #explore-button{
-        margin-top: 125px;
-        border: 8px solid white;
-        font-size: 42px;
-        padding: 25px;
-      }
-    }
-  }*/
   #about .about-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas: 'polaroid' 'description' 'skills';
     background: linear-gradient(rgba(173, 220, 229, 0) 0%, 93%, rgba(255, 255, 255, 0.4) 95%, rgba(173, 220, 229, 0) 100%);
-    /*
-      .polaroid{
-        grid-area: polaroid;
-        height: 520px;
-        width: 430px;
-        img{
-          height: 420px;
-          width: 400px;
-        }
-      }
-      .about-intro{
-        grid-area: description;
-        font-size: @content-size;
-        margin: @inner-margin;
-      }*/
+  }
+  #about .about-container .polaroid {
+    grid-area: polaroid;
+  }
+  #about .about-container .about-intro {
+    grid-area: description;
+    margin: 80px 55px;
   }
   #about .about-container .skills {
     grid-area: skills;
@@ -397,120 +373,31 @@ body {
     width: 100%;
     margin: 35px 55px 300px 55px;
     justify-content: center;
-    /*
-        .card{
-          width: 800px;
-          height: 250px;
-          margin-bottom: 50px;
-          .card-header{
-            height: 85px;
-            font-size: 38px;
-          }
-        }
-        .icon-group{
-          img{
-            height: 120px;
-            width: 120px;
-          }
-        }*/
   }
   #work #project-list .project-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto;
   }
   #work #project-list .project-container .card {
-    width: 90%;
+    width: 75%;
     margin-top: 50px;
   }
   #work #project-list .project-container .card .card-header {
     text-align: center;
-    font-size: 48px;
-    height: 100px;
   }
   #work #project-list .project-container .card .card-body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto 1fr;
-    font-size: 26px;
   }
   #work #project-list .project-container .card .card-body img {
     grid-row-start: 1;
-    width: 90%;
+    width: 75%;
     justify-self: center;
     margin-bottom: 40px;
   }
   #work #project-list .project-container .card .card-body ul {
     grid-row-start: 2;
     grid-column-start: 1;
-  }
-  #work #project-list .project-container .card .card-footer {
-    height: 75px;
-    font-size: 28px;
-  }
-  #work #project-list .project-container .card .card-footer .tag {
-    height: 40px;
-  }
-  #education #education-container .school-container img {
-    height: 150px;
-    width: 150px;
-  }
-  #education #education-container .school-container h1 {
-    margin-top: 25px;
-    font-size: 52px;
-  }
-  #education #education-container .school-container h2 {
-    font-size: 38px;
-  }
-  #education #education-container .school-container ul,
-  #education #education-container .school-container p {
-    margin-top: 30px;
-  }
-  #contact #contact-container .email-button {
-    margin-top: 150px;
-    height: 150px;
-    width: 500px;
-    border-width: 6px;
-  }
-  #contact #contact-container .email-button #send-mail {
-    padding-left: 20px;
-    font-size: 42px;
-  }
-  #contact #contact-container .contact-list {
-    margin-top: 50px;
-  }
-  #contact #contact-container .contact-list a {
-    font-size: 36px;
-    padding-left: 40px;
-  }
-  .title-divider {
-    width: 150px;
-    height: 7px;
-  }
-  #nav {
-    height: 100px;
-    font-size: 42px;
-  }
-  #email-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-  }
-  #email-form #form-name {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  #email-form #form-email {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-  #email-form #form-message {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
   }
 }
